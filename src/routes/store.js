@@ -19,5 +19,21 @@ router.get('/comprar', async (req, res) => {
     res.render('store/carrito', { respuesta });
 });
 
+router.get('/nuevo', (req, res) => {
+    console.log("Aqui estoy");
+    res.render('store/agregar');
+});
+
+router.post('/nuevo', async(req, res) => {
+    const { nombres, apellidos, cedula } = req.body;
+    const message = { 
+        nombres, 
+        apellidos, 
+        cedula, 
+    };
+    await pool.query('INSERT into clientes set ?', [message]);
+    res.redirect('store/carrito');
+});
+ 
 
 module.exports = router;
