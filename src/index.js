@@ -43,7 +43,7 @@ app.use(express.urlencoded({
 app.use(require('./routes/index.js'));
 app.use(require('./routes/authentication.js'));
 app.use( '/store', require('./routes/store.js'));
-// app.use( '/clientes', require('./routes/clientes.js'));
+app.use( '/clientes', require('./routes/clientes.js'));
 
 
 //public
