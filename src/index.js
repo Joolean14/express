@@ -8,7 +8,7 @@ const path = require('path'); //modulo de path de node.js
 const app = express();
 
 //settings
-app.set('port', process.env.PORT || 4000); //conf del puert
+app.set('port', process.env.PORT || 5432); //conf del puert
 //handlebar settings
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs({
@@ -35,8 +35,8 @@ app.use(express.urlencoded({
 
 //routes
 //esta se encarga de aclarar que todo request siempre pasa por aqui y continua
- //y para generar variables que se pueden acceder desde cualquier parte 
- app.use((req,res,next)=>{ 
+ //y para generar variables que se pueden acceder desde cualquier parte
+ app.use((req,res,next)=>{
      next();});
 //para que no termne el request aqui si no que siga
 
@@ -44,7 +44,7 @@ app.use(require('./routes/index.js'));
 app.use(require('./routes/authentication.js'));
 app.use( '/store', require('./routes/store.js'));
 app.use( '/clientes', require('./routes/clientes.js'));
-
+app.use( '/inventarios', require('./routes/inventarios.js'));
 
 //public
 app.use(express.static(path.join(__dirname, 'public')));

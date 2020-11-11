@@ -1,10 +1,10 @@
 const express = require('express');
 const pool = require('../database');
-const router = express.Router();
+const router = express.Router(); 
 
 router.get('/comprar', (req, res) => {
     res.render('store/comprar');
-});
+}); 
 
 router.post('/comprar', async (req, res) => {
     const { email, categoria, mensaje } = req.body;
