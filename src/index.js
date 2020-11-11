@@ -45,7 +45,7 @@ app.use(require('./routes/authentication.js'));
 app.use( '/store', require('./routes/store.js'));
 app.use( '/clientes', require('./routes/clientes.js'));
 app.use( '/inventarios', require('./routes/inventarios.js'));
-app.use( '/empleados') , require('./routes/empleados.js');
+// app.use( '/empleados') , require('./routes/empleados.js');
 
 //public
 app.use(express.static(path.join(__dirname, 'public')));
