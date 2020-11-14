@@ -1,8 +1,9 @@
 module.exports = {
     database: {
         host: 'localhost',
-        user: 'root',
-        password: 'hesan1984hesan',
-        database: 'falso_idolo'
+        user: 'admin',
+        password: 'Jizanthepus1414!!',
+        database: 'falso_idolo',
+        insecureAuth : true
     }
 }

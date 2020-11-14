@@ -1,8 +1,6 @@
 const mysql = require('mysql');
 const { promisify }= require('util');
-
 const { database } = require('./keys');
-
 const pool = mysql.createPool(database);
 
 pool.getConnection((err, connection) => {
@@ -17,10 +15,10 @@ pool.getConnection((err, connection) => {
       console.error('Database connection was refused');
     }
   }
-
-  if (connection) connection.release();
+  if (connection) {
+    connection.release();
   console.log('DB is Connected');
-
+  }
   return;
 });
 
