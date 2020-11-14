@@ -23,7 +23,7 @@ router.post('/nuevo',async(req,res)=>{
 
 
 router.post('/mostrarClientes', (req,res)=>{
-    res.redirect('/clientes/listar')
+    res.redirect('/clientes/mostrarClientes');
 });
 
 
