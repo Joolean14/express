@@ -19,7 +19,6 @@ app.engine('.hbs', exphbs({
     layoutsDir:path.join(app.get('views'),'layouts'),
     //definicion de los directorios
      partialsDir:path.join(app.get('views'),'partials'),
-    //definicion de los directorios
     extname: '.hbs',
     helpers: require('./lib/handlebars')//archivo de configuración crear handlebars.js
 }));
@@ -29,16 +28,13 @@ app.set('view engine', '.hbs');
 //middlewares
 app.use(express.json());
 app.use(morgan('dev'));
-app.use(express.urlencoded({
-    extended: false
-})); //parametro que indica que solo se reciben strings sin imagenes
+app.use(express.urlencoded({ extended: false })); //parametro que indica que solo se reciben strings sin imagenes
 
 //routes
 //esta se encarga de aclarar que todo request siempre pasa por aqui y continua
  //y para generar variables que se pueden acceder desde cualquier parte
  //para que no termne el request aqui si no que siga
- app.use((req,res,next)=>{
-     next();});
+ app.use((req,res,next)=>{ next();});
 
 app.use(require('./routes/index.js'));
 app.use(require('./routes/authentication.js'));
