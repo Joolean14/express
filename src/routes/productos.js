@@ -3,7 +3,7 @@ const pool = require('../database');
 const router = express.Router();
 
 router.get('/', (req,res) => {
-    res.render('/productos/catalogo')
+    res.render('productos/catalogo')
 });   
  
 router.post('/nuevo',async(req,res)=>{
