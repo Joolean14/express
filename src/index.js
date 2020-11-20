@@ -38,7 +38,7 @@ app.use(express.urlencoded({ extended: false })); //parametro que indica que sol
 
 app.use(require('./routes/index.js'));
 app.use(require('./routes/authentication.js'));
-app.use( '/store', require('./routes/store.js'));
+app.use( '/store', require('./routes/store.js')); 
 app.use( '/clientes', require('./routes/clientes.js'));
 app.use( '/inventarios', require('./routes/inventarios.js'));
 app.use( '/productos' , require('./routes/productos.js'));

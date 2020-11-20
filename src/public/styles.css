@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+form {
+    width: 30%;
+    margin: auto;
+}
+
+.form-control {
+    border-radius: 3px;
+}
+
+.btn-primary {}

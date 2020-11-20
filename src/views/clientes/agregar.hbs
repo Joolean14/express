@@ -1,15 +1,26 @@
+<h1>Agregar Cliente</h1>
+
+
 <form action="/clientes/nuevo" method="POST">
   <div class="form-group">
-    <label for="exampleInputEmail1">Nombres</label>
-    <input type="text" class="form-control" id="nombres" name="nombres" aria-describedby="emailHelp">
-  </div>
+    <label for="first_name">First Name</label>
+    <input type="text" class="form-control" id="nombre" name="first_name">
+  </div>   
   <div class="form-group">
-    <label for="exampleInputPassword1">Apellidos</label>
-    <input type="text" class="form-control" id="apellidos" name="apellidos">
+    <label for="last_name">Last Name</label>
+    <input type="text" class="form-control" id="apellido" name="last_name">
   </div> 
   <div class="form-group">
-    <label for="exampleInputPassword1">Cedula</label>
-    <input type="text" class="form-control" id="cedula" name="cedula">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" name="email">
+  </div> 
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name="password" >
+  </div>
+  <div class="form-group">
+    <label for="fip_total">FIP</label>
+    <input type="text" class="form-control" id="fip" name="fip_total">
   </div>
   <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
