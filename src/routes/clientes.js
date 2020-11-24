@@ -6,10 +6,10 @@ router.get('/', (req,res) => {
     console.log('Perfil del cliente');
     res.render('clientes/index')
 });  
-
+ 
 router.get('/nuevo', (req, res) => {
     console.log("agrego un cliente");
-    res.render('clientes/agregar');
+    res.render('clientes/agregar', { title: 'Agregar'} );
 }); 
  
 router.post('/nuevo',async(req,res)=>{
@@ -20,6 +20,7 @@ router.post('/nuevo',async(req,res)=>{
     res.redirect("/clientes/mostrarClientes");
 }); 
 
+ 
 
 
 

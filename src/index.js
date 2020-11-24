@@ -3,6 +3,8 @@ const express = require('express');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const path = require('path'); //modulo de path de node.js
+const passport = require('passport');
+require ('./lib/passport');
 
 //inicializaciones
 const app = express();
@@ -26,9 +28,11 @@ app.set('view engine', '.hbs');
 
 
 //middlewares
-app.use(express.json());
+app.use(express.json()); 
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false })); //parametro que indica que solo se reciben strings sin imagenes
+app.use(passport.initialize()); 
+app.use(passport.session()); 
 
 //routes
 //esta se encarga de aclarar que todo request siempre pasa por aqui y continua
@@ -42,6 +46,8 @@ app.use( '/store', require('./routes/store.js'));
 app.use( '/clientes', require('./routes/clientes.js'));
 app.use( '/inventarios', require('./routes/inventarios.js'));
 app.use( '/productos' , require('./routes/productos.js'));
+app.use(require('./routes/auth.js'));
+ 
    
 //public
 app.use(express.static(path.join(__dirname, 'public'))); //carpeta pública con css y html estático

@@ -1,12 +1,28 @@
 body {
     background-color: black;
-    color: white;
+    font-family: 'DaisyWheel', sans-serif;    
+    
+}
+
+.logo {
+    width: 4%;
 }
 
 h1 {
+    color: white;
+    font-size: 3vw;
     text-align: center;
     margin-top: 2%;
     margin-bottom: 1%;
+}
+
+h5, p {
+    color: black;
+}
+
+
+.mascara {
+    width: 20%;
 }
 
 form {
