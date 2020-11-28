@@ -1,23 +1,24 @@
 const express = require('express');
 const pool = require('../database');
 const router = express.Router();
+const {isLoggedIn} = require('../lib/session');
+
 
 router.get('/', (req,res) => {
-    console.log('Perfil del cliente');
-    res.render('clientes/index')
+    // console.log('Perfil del cliente');
+    res.render('clientes/index'); 
 });  
- 
-router.get('/nuevo', (req, res) => {
-    console.log("agrego un cliente");
-    res.render('clientes/agregar', { title: 'Agregar'} );
+
+router.get('/nuevo', isLoggedIn ,(req, res) => {
+    res.render('clientes/agregar', { title: 'Agregar'} );  
 }); 
  
 router.post('/nuevo',async(req,res)=>{
     const { password, first_name, last_name, email, fip_total } = req.body;
     const message = { password, first_name, last_name, email, fip_total };
     await pool.query('INSERT INTO user set ?;', [message]);
-    console.log('agregado');
-    res.redirect("/clientes/mostrarClientes");
+    // console.log('agregado');
+    res.redirect("/clientes/mostrarClientes");    
 }); 
 
  

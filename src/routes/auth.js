@@ -5,10 +5,19 @@ const router = express.Router();
 
   
 router.get('/signup', (req,res) => {  
-    res.render('auth/login')
+    res.render('auth/signup'); 
 });   
 
-router.post('/signup', passport.authenticate('local.register', {
+router.post('/signup', passport.authenticate('local.signup', {
+    successRedirect : '/productos',
+    failureRedirect : '/signup'
+})); 
+
+router.get('/login', (req,res) => {  
+    res.render('auth/login'); 
+});   
+
+router.post('/login', passport.authenticate('local.login', {
     successRedirect : '/productos',
     failureRedirect : '/signup'
 })); 
